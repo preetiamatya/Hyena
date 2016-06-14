@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon/favicon.ico">
+
+    <title>Hyena : Platform to test Predatory open access Publishing</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+    <link href="inputDropdownStyles.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script src="../../assets/js/hyena.js"></script>
+    <script src="../../assets/js/inputDropdown.js"></script>
+    <script src="../../assets/js/hyena.json"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body ng-app="inputDropdownDemo">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Hyena</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+
+        <h1>Hyena</h1>
+
+        <p class="lead">Testing Predatory open access publishing </p>
+        <div class="page-header">
+          <h1>About Hyena</h1>
+        </div>
+        <div class="well">
+          <p>
+
+            Hyena is a platform to test <a href="https://en.wikipedia.org/wiki/Predatory_open_access_publishing">Predatory open access publishing</a>. It is based upon the  <a href="https://scholarlyoa.com/2012/12/06/bealls-list-of-predatory-publishers-2013/">Beall’s List of Predatory Publishers</a>. The goal of this project is provide information whether the journals can be well trusted to submit the academic papers. </p>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="content" ng-controller="InputDropdownController as dropdownCtrl">
+          <div class="left">Select a Publisher</div>
+          <form name="demoFormStrings" ng-submit="dropdownCtrl.submitFormStrings()" novalidate>
+            <div>
+              <input-dropdown
+                      input-placeholder="Publisher"
+                      input-name="publisher-strings"
+                      input-required="true"
+                      selected-item="dropdownCtrl.publisherString"
+                      default-dropdown-items="dropdownCtrl.defaultDropdownStrings"
+                      filter-list-method="dropdownCtrl.filterStringList(userInput)"
+                      item-selected-method="dropdownCtrl.itemStringSelected(item)"
+                      class ="dropdown-show"
+              >
+              </input-dropdown>
+              <button type="submit" ng-disabled="demoFormStrings.$invalid">Submit</button>
+            </div>
+          </form>
+          <p class="message">{{dropdownCtrl.stringMessage}}</p>
+
+        </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+
+
+
+    </script>
+  </body>
+</html>
